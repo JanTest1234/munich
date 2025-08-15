@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: some body defaults to match the dark UI */
+html, body, #root { height: 100%; }
+body { background: #000; color: #fff; }
