@@ -111,8 +111,7 @@ const criteria = [
       "We look for fresh, daring ideas that push boundaries and challenge convention — a voice that feels unmistakably yours.",
     example:
       "Example: A micro-budget thriller using a single, unbroken take to explore the anxieties of digital life.",
-    img:
-      "https://images.unsplash.com/photo-1495567720989-cebdbdd97913?auto=format&fit=crop&w=1200&q=60",
+  
   },
   {
     icon: Eye,
@@ -121,9 +120,7 @@ const criteria = [
       "From framing to color, the image should captivate. We love confident camera language and purposeful design.",
     example:
       "Example: Natural light transformed into a narrative tool that mirrors the protagonist's inner world.",
-    img:
-      "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&w=1200&q=60",
-  },
+     },
   {
     icon: MessageCircle,
     title: "Narrative Impact",
@@ -131,9 +128,7 @@ const criteria = [
       "Stories that engage, surprise, and resonate long after the credits. Structure serves emotion — not the other way around.",
     example:
       "Example: A non-linear short that reveals its twist through sound design rather than dialogue.",
-    img:
-      "https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?auto=format&fit=crop&w=1200&q=60",
-  },
+    },
   {
     icon: Heart,
     title: "Performance Power",
@@ -141,9 +136,7 @@ const criteria = [
       "Authentic, lived-in performances make characters unforgettable. Casting and directing are everything.",
     example:
       "Example: Street-cast newcomers whose chemistry carries the film's emotional weight.",
-    img:
-      "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=60",
-  },
+   },
   {
     icon: Film,
     title: "Youth Relevance",
@@ -151,9 +144,7 @@ const criteria = [
       "Themes and perspectives that speak to the dreams, doubts, and courage of young audiences worldwide.",
     example:
       "Example: A hybrid docu-fiction about climate grief and collective action in high school.",
-    img:
-      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963f?auto=format&fit=crop&w=1200&q=60",
-  },
+     },
   {
     icon: Sparkles,
     title: "Innovation",
@@ -161,9 +152,7 @@ const criteria = [
       "Surprise us. Try new formats, blend genres, embrace constraints as creative fuel.",
     example:
       "Example: A phone-vertical musical that uses push notifications as chorus.",
-    img:
-      "https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1200&q=60",
-  },
+      },
 ];
 
 const testimonials = [
