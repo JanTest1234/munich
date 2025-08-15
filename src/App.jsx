@@ -87,25 +87,19 @@ const jury = [
     name: "Tom Tykwer",
     role: "Director",
     bio:
-      "We are pleased to welcome Tom Tykwer, the acclaimed German filmmaker and producer, as a member of our jury. Tykwer is known for his innovative work on films such as Run Lola Run, Perfume: The Story of a Murderer, and Cloud Atlas. With a career spanning both directing and producing, he brings a unique creative vision and a deep understanding of the filmmaking process.
-
-As a jury member, Tom Tykwer contributes his extensive industry experience, artistic insight, and passion for storytelling, ensuring a thoughtful and informed evaluation of this year’s cinematic selections.",
+      "We are pleased to welcome Tom Tykwer, the acclaimed German filmmaker and producer, as a member of our jury. Tykwer is known for his innovative work on films such as Run Lola Run, Perfume: The Story of a Murderer, and Cloud Atlas. With a career spanning both directing and producing, he brings a unique creative vision and a deep understanding of the filmmaking process. As a jury member, Tom Tykwer contributes his extensive industry experience, artistic insight, and passion for storytelling, ensuring a thoughtful and informed evaluation of this year’s cinematic selections.",
   },
   {
     name: "Daniel Brühl",
     role: "Cinematographer",
     bio:
-      "We are delighted to welcome Daniel Brühl, the renowned German-Spanish actor, as a member of our jury. Brühl has captivated international audiences with his versatile performances in films such as Kafka, Rush, and The Bourne Ultimatum. Known for his nuanced acting and ability to portray complex characters, he brings both depth and charisma to the screen.
-
-As a jury member, Daniel Brühl contributes his extensive experience in the film industry, his artistic sensibility, and his keen understanding of performance, ensuring a thoughtful and insightful evaluation of this year’s cinematic entries.",
+      "We are delighted to welcome Daniel Brühl, the renowned German-Spanish actor, as a member of our jury. Brühl has captivated international audiences with his versatile performances in films such as Kafka, Rush, and The Bourne Ultimatum. Known for his nuanced acting and ability to portray complex characters, he brings both depth and charisma to the screen. As a jury member, Daniel Brühl contributes his extensive experience in the film industry, his artistic sensibility, and his keen understanding of performance, ensuring a thoughtful and insightful evaluation of this year’s cinematic entries.",
   },
   {
     name: "Fatih Akin",
     role: "Screenwriter",
     bio:
-      "We are thrilled to welcome Fatih Akin, the acclaimed German filmmaker, as a distinguished member of our jury. Known for his powerful storytelling and distinctive cinematic style, Akin has captivated audiences worldwide with films such as Head-On, The Edge of Heaven, and In the Fade. His work often explores themes of identity, migration, and human relationships, blending emotional depth with compelling narratives.
-
-As a jury member, Fatih Akin brings a wealth of experience, artistic insight, and a keen eye for storytelling that transcends borders. We are honored to have him help shape the selection of this year’s most outstanding films.",
+      "We are thrilled to welcome Fatih Akin, the acclaimed German filmmaker, as a distinguished member of our jury. Known for his powerful storytelling and distinctive cinematic style, Akin has captivated audiences worldwide with films such as Head-On, The Edge of Heaven, and In the Fade. His work often explores themes of identity, migration, and human relationships, blending emotional depth with compelling narratives. As a jury member, Fatih Akin brings a wealth of experience, artistic insight, and a keen eye for storytelling that transcends borders. We are honored to have him help shape the selection of this year’s most outstanding films.",
   },
 ];
 
