@@ -188,14 +188,14 @@ const testimonials = [
 ];
 
 const gallery = [
-  "https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=1600&q=60",
-  "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=1600&q=60",
-  "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=60",
-  "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1600&q=60",
-  "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=60",
-  "https://images.unsplash.com/photo-1542444459-db63c8d4bdb1?auto=format&fit=crop&w=1600&q=60",
-  "https://images.unsplash.com/photo-1512427691650-63e8aba4f0ca?auto=format&fit=crop&w=1600&q=60",
-  "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1600&q=60",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
 ];
 
 const sponsors = [
