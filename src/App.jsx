@@ -35,26 +35,26 @@ const finalists = [
   {
     title: "Finalist 1",
     description:
-      "A gripping coming-of-age drama about friendship and loss. Intimate performances, tactile camerawork, and a final shot that lingers like a memory.",
+      "A gripping short film exploring depression, anxiety, and the quiet strength that carries us through.",
     url: "https://youtu.be/xBCC5RpWKHA",
     blog:
-      "This film stood out for its emotional depth and nuanced storytelling, capturing the bittersweet nature of growing up in a way that resonated deeply with the jury. The director's restraint amplifies the emotional payoff in the third act.",
+      "This powerful short film takes viewers on an emotional journey through depression, anxiety, and the search for inner strength. The jury praised its “sensitive yet striking visual storytelling” and the way it “captures both the fragility and resilience of the human spirit.” With intense character portrayals and a carefully crafted atmosphere, the film conveys the inner struggle, moments of despair, and subtle sparks of hope that guide one forward. “Kornblume” is a courageous, moving, and inspiring work that leaves a lasting impression.",
   },
   {
     title: "Finalist 2",
     description:
-      "A bold animated short exploring identity and creativity. Visual poetry meets rhythmic editing in a whirlwind of color and sound.",
+      "A relatable short film exploring the stress, pressures, and resilience of school life.",
     url: "https://youtu.be/na9N-YT1l90",
     blog:
-      "A visual masterpiece that challenged the boundaries of animation and narrative structure, offering an inspiring message about self-discovery. The texture of hand-drawn elements gives a human pulse to every frame.",
+      "This insightful short film delves into the pressures and challenges of school life, capturing the stress, expectations, and emotional ups and downs that students face daily. The jury praised its “relatable storytelling and authentic portrayal of youth experiences,” noting how it “balances humor, tension, and empathy with remarkable sensitivity.” Through its vivid characters and engaging narrative, the film highlights both the struggles and the resilience of young people navigating academic and social pressures.",
   },
   {
     title: "Finalist 3",
     description:
-      "A powerful documentary on climate activism led by youth. Urgent, unflinching, and deeply personal.",
+      "A visually and sonically stunning short film where exceptional cinematography and immersive sound design turn a minimal crime story into a gripping cinematic experience.",
     url: "https://youtu.be/J36aYNW6RaI",
     blog:
-      "Its raw portrayal of young activists taking on global leaders left an unforgettable impression, highlighting urgent issues with passion and clarity. The film's observational style builds trust and momentum.",
+      "While the narrative centers on three criminals and the tense interrogation of one by another, the jury, particularly Fatih Akin, was captivated by the film’s sound design and immersive auditory landscape. Combined with its striking cinematography, meticulous scene composition, and dynamic camera work, the film creates an intense and gripping atmosphere that elevates even a minimal plot. This short film demonstrates how masterful visuals and sound can transform a simple story into a compelling cinematic experience.",
   },
 ];
 
@@ -84,22 +84,28 @@ const pastWinners = [
 
 const jury = [
   {
-    name: "Anna Müller",
-    role: "Festival Director",
+    name: "Tom Tykwer",
+    role: "Director",
     bio:
-      "Over 20 years of experience in film curation and festival management. Known for championing independent voices and bringing fresh perspectives to the international film scene.",
+      "We are pleased to welcome Tom Tykwer, the acclaimed German filmmaker and producer, as a member of our jury. Tykwer is known for his innovative work on films such as Run Lola Run, Perfume: The Story of a Murderer, and Cloud Atlas. With a career spanning both directing and producing, he brings a unique creative vision and a deep understanding of the filmmaking process.
+
+As a jury member, Tom Tykwer contributes his extensive industry experience, artistic insight, and passion for storytelling, ensuring a thoughtful and informed evaluation of this year’s cinematic selections.",
   },
   {
-    name: "Jonas Schmidt",
+    name: "Daniel Brühl",
     role: "Cinematographer",
     bio:
-      "Award-winning cinematographer celebrated for his innovative use of light and movement to tell deeply human stories.",
+      "We are delighted to welcome Daniel Brühl, the renowned German-Spanish actor, as a member of our jury. Brühl has captivated international audiences with his versatile performances in films such as Kafka, Rush, and The Bourne Ultimatum. Known for his nuanced acting and ability to portray complex characters, he brings both depth and charisma to the screen.
+
+As a jury member, Daniel Brühl contributes his extensive experience in the film industry, his artistic sensibility, and his keen understanding of performance, ensuring a thoughtful and insightful evaluation of this year’s cinematic entries.",
   },
   {
-    name: "Lea Fischer",
+    name: "Fatih Akin",
     role: "Screenwriter",
     bio:
-      "Renowned for her sharp dialogue and character-driven storytelling, with multiple international accolades.",
+      "We are thrilled to welcome Fatih Akin, the acclaimed German filmmaker, as a distinguished member of our jury. Known for his powerful storytelling and distinctive cinematic style, Akin has captivated audiences worldwide with films such as Head-On, The Edge of Heaven, and In the Fade. His work often explores themes of identity, migration, and human relationships, blending emotional depth with compelling narratives.
+
+As a jury member, Fatih Akin brings a wealth of experience, artistic insight, and a keen eye for storytelling that transcends borders. We are honored to have him help shape the selection of this year’s most outstanding films.",
   },
 ];
 
