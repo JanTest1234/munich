@@ -199,11 +199,11 @@ const gallery = [
 ];
 
 const sponsors = [
-  { name: "CineTech", logo: "🎞️" },
-  { name: "VisionLab", logo: "🔭" },
-  { name: "FrameForge", logo: "🧰" },
-  { name: "SoundWave", logo: "🎧" },
-  { name: "CloudStream", logo: "☁️" },
+  { name: "CineTech", logo: "" },
+  { name: "VisionLab", logo: "" },
+  { name: "FrameForge", logo: "" },
+  { name: "SoundWave", logo: "" },
+  { name: "CloudStream", logo: "" },
 ];
 
 /********************
@@ -211,7 +211,7 @@ const sponsors = [
  ********************/
 // Choose a big target date. Adjust as needed.
 const FESTIVAL_NAME = "Munich Online Film Festival";
-const FESTIVAL_START = new Date("2025-10-10T18:00:00+02:00"); // CET/CEST Munich time
+const FESTIVAL_START = new Date("2025-08-19T18:00:00+02:00"); // CET/CEST Munich time
 
 function useTimeLeft(targetDate) {
   const [now, setNow] = useState(() => new Date());
