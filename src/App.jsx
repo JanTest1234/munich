@@ -422,7 +422,7 @@ const HomePage = () => {
               <Badge className="tracking-widest uppercase bg-yellow-500 text-black text-base px-4 py-2">Since 2010</Badge>
               <div className="flex items-center gap-3 text-yellow-300 text-sm md:text-base">
                 <Calendar className="h-5 w-5" />
-                <span>10–20 October 2025 · Online • Munich</span>
+                <span>22 august 2025 · Online • Munich</span>
               </div>
             </div>
             <h1 className="text-6xl md:text-8xl xl:text-9xl font-extrabold mb-6 leading-[0.95] drop-shadow-[0_10px_60px_rgba(234,179,8,0.2)]">
@@ -760,8 +760,8 @@ function StickyCountdownBar() {
           <span className="uppercase tracking-widest text-gray-400">Festival starts in</span>
           <span className="font-bold text-yellow-300 tabular-nums">{days}d {hours}h {minutes}m {seconds}s</span>
         </div>
-        <Link to="/participate" className="hidden sm:inline-flex items-center gap-2 bg-yellow-500 text-black font-extrabold px-4 py-2 rounded-xl hover:bg-yellow-400">
-          <ArrowRight className="h-4 w-4" /> Participate
+        <Link to="/finalists" className="hidden sm:inline-flex items-center gap-2 bg-yellow-500 text-black font-extrabold px-4 py-2 rounded-xl hover:bg-yellow-400">
+          <ArrowRight className="h-4 w-4" /> Finalists
         </Link>
       </div>
     </div>
