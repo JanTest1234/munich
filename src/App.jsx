@@ -437,10 +437,7 @@ const HomePage = () => {
             <div className="mt-10">
               <Countdown />
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-                <a href="#submit" className="bg-yellow-500 text-black font-extrabold px-8 py-4 rounded-2xl hover:bg-yellow-400 inline-flex items-center gap-2 text-lg">
-                  <Film className="h-5 w-5" /> Submit Your Film
-                </a>
-                <Link to="/finalists" className="border border-yellow-500/50 text-yellow-300 hover:text-black hover:bg-yellow-400 font-bold px-8 py-4 rounded-2xl inline-flex items-center gap-2 text-lg">
+                               <Link to="/finalists" className="border border-yellow-500/50 text-yellow-300 hover:text-black hover:bg-yellow-400 font-bold px-8 py-4 rounded-2xl inline-flex items-center gap-2 text-lg">
                   <PlayCircle className="h-5 w-5" /> Watch Finalists
                 </Link>
               </div>
@@ -663,47 +660,6 @@ const HistoryPage = () => (
   </div>
 );
 
-const GalleryPage = () => {
-  const [active, setActive] = useState(null);
-  const open = (i) => setActive(i);
-  const close = () => setActive(null);
-  const next = () => setActive((i) => (i === null ? 0 : (i + 1) % gallery.length));
-  const prev = () => setActive((i) => (i === null ? 0 : (i - 1 + gallery.length) % gallery.length));
-
-  return (
-    <div>
-      <section className="py-24 max-w-7xl mx-auto px-4">
-        <h2 className="text-5xl font-extrabold mb-6 flex items-center gap-3">
-          <GalleryHorizontal className="h-10 w-10 text-yellow-400" /> Gallery
-        </h2>
-        <p className="text-gray-400 mb-10 max-w-4xl text-lg">
-          A peek behind the scenes: masterclasses, live Q&As, and the energy of premieres across time zones.
-        </p>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {gallery.map((src, i) => (
-            <button
-              key={src}
-              onClick={() => open(i)}
-              className="relative group overflow-hidden rounded-2xl border border-gray-800"
-            >
-              <img src={src} alt="gallery" className="h-64 w-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {active !== null && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <button onClick={close} className="absolute top-6 right-6 text-gray-400 hover:text-white text-3xl">✕</button>
-          <button onClick={prev} className="absolute left-6 text-gray-300 hover:text-white"><ChevronLeft className="h-12 w-12" /></button>
-          <img src={gallery[active]} alt="large" className="max-h-[85vh] max-w-[90vw] rounded-2xl shadow-2xl" />
-          <button onClick={next} className="absolute right-6 text-gray-300 hover:text-white"><ChevronRight className="h-12 w-12" /></button>
-        </div>
-      )}
-    </div>
-  );
-};
 
 const ParticipatePage = () => (
   <div id="submit">
@@ -824,7 +780,6 @@ function Nav() {
     { to: "/criteria", label: "Criteria" },
     { to: "/about", label: "About" },
     { to: "/history", label: "History" },
-    { to: "/gallery", label: "Gallery" },
     { to: "/participate", label: "Participate" },
   ];
   const location = useLocation();
@@ -903,8 +858,7 @@ export default function MunichOnlineFilmFestival() {
               <Route path="/criteria" element={<CriteriaPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/history" element={<HistoryPage />} />
-              <Route path="/gallery" element={<GalleryPage />} />
-              <Route path="/participate" element={<ParticipatePage />} />
+                            <Route path="/participate" element={<ParticipatePage />} />
             </Routes>
           </AnimatePresence>
         </div>
