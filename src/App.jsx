@@ -56,6 +56,15 @@ const finalists = [
     blog:
       "While the narrative centers on three criminals and the tense interrogation of one by another, the jury, particularly Fatih Akin, was captivated by the film’s sound design and immersive auditory landscape. Combined with its striking cinematography, meticulous scene composition, and dynamic camera work, the film creates an intense and gripping atmosphere that elevates even a minimal plot. This short film demonstrates how masterful visuals and sound can transform a simple story into a compelling cinematic experience.",
   },
+ {
+    title: "Finalist 4",
+    description:
+      "A poetic, dialogue-free short film that uses only music and imagery to portray the emotions of adolescence.",
+    url: "https://youtu.be/e26knO5D-mk?si=Id30LAsZphBZkNax",
+    blog:
+      "Told without dialogue, this short film relies entirely on music and imagery to capture the emotions, struggles, and dreams of adolescence. The jury highlighted its “remarkable ability to communicate complex feelings with pure visual and musical language,” praising its poetic flow and authenticity. Through carefully composed scenes and an evocative soundtrack, the film immerses viewers in the raw and unfiltered perspective of a teenager navigating the journey of growing up.",
+  },
+
 ];
 
 const pastWinners = [
@@ -86,23 +95,25 @@ const jury = [
   {
     name: "Tom Tykwer",
     role: "Director",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Tom_Tykwer_Berlinale_2015.jpg",
     bio:
       "We are pleased to welcome Tom Tykwer, the acclaimed German filmmaker and producer, as a member of our jury. Tykwer is known for his innovative work on films such as Run Lola Run, Perfume: The Story of a Murderer, and Cloud Atlas. With a career spanning both directing and producing, he brings a unique creative vision and a deep understanding of the filmmaking process. As a jury member, Tom Tykwer contributes his extensive industry experience, artistic insight, and passion for storytelling, ensuring a thoughtful and informed evaluation of this year’s cinematic selections.",
   },
   {
     name: "Daniel Brühl",
     role: "Cinematographer",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Daniel_Bruhl_2017.jpg",
     bio:
       "We are delighted to welcome Daniel Brühl, the renowned German-Spanish actor, as a member of our jury. Brühl has captivated international audiences with his versatile performances in films such as Kafka, Rush, and The Bourne Ultimatum. Known for his nuanced acting and ability to portray complex characters, he brings both depth and charisma to the screen. As a jury member, Daniel Brühl contributes his extensive experience in the film industry, his artistic sensibility, and his keen understanding of performance, ensuring a thoughtful and insightful evaluation of this year’s cinematic entries.",
   },
   {
     name: "Fatih Akin",
     role: "Screenwriter",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/54/Fatih_Akin_%28Berlin_Film_Festival_2017%29.jpg",
     bio:
       "We are thrilled to welcome Fatih Akin, the acclaimed German filmmaker, as a distinguished member of our jury. Known for his powerful storytelling and distinctive cinematic style, Akin has captivated audiences worldwide with films such as Head-On, The Edge of Heaven, and In the Fade. His work often explores themes of identity, migration, and human relationships, blending emotional depth with compelling narratives. As a jury member, Fatih Akin brings a wealth of experience, artistic insight, and a keen eye for storytelling that transcends borders. We are honored to have him help shape the selection of this year’s most outstanding films.",
   },
 ];
-
 const criteria = [
   {
     icon: Lightbulb,
@@ -578,13 +589,23 @@ const JuryPage = () => (
         with both technical precision and artistic sensitivity. Beyond scores, the jury provides mentorship and detailed
         feedback to help projects grow.
       </p>
-      <motion.div variants={stagger} initial="hidden" animate="visible" className="grid md:grid-cols-3 gap-10">
+      <motion.div
+        variants={stagger}
+        initial="hidden"
+        animate="visible"
+        className="grid md:grid-cols-3 gap-10"
+      >
         {jury.map((j) => (
           <motion.div
             variants={fadeInUp}
             key={j.name}
-            className="bg-gray-900 rounded-3xl p-8 shadow-[0_0_60px_rgba(234,179,8,0.15)] border border-gray-800 hover:shadow-[0_0_80px_rgba(234,179,8,0.35)] transition-shadow"
+            className="bg-gray-900 rounded-3xl p-8 shadow-[0_0_60px_rgba(234,179,8,0.15)] border border-gray-800 hover:shadow-[0_0_80px_rgba(234,179,8,0.35)] transition-shadow flex flex-col items-center text-center"
           >
+            <img
+              src={j.image}
+              alt={j.name}
+              className="w-32 h-32 object-cover rounded-full mb-6 border-4 border-yellow-400 shadow-lg"
+            />
             <h3 className="text-2xl font-extrabold mb-1">{j.name}</h3>
             <p className="text-yellow-400 mb-2 text-base font-semibold">{j.role}</p>
             <p className="text-gray-400 text-base leading-relaxed">{j.bio}</p>
@@ -594,7 +615,6 @@ const JuryPage = () => (
     </section>
   </div>
 );
-
 const CriteriaPage = () => (
   <div>
     <section className="py-24 max-w-7xl mx-auto px-4">
