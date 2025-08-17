@@ -70,25 +70,33 @@ const finalists = [
 const pastWinners = [
   {
     year: 2017,
-    title: "Winner 2017",
+    title: "Ruby",
     url: "https://youtu.be/WBC2MukULcE",
     blog:
       "This unforgettable story combined beautiful cinematography with a heartfelt narrative that stayed with audiences long after the credits rolled.",
   },
   {
     year: 2018,
-    title: "Winner 2018",
+    title: "Die Klausur",
     url: "https://youtu.be/yFE9RVDhN_8",
     blog:
       "A bold and daring film that redefined youth cinema, tackling complex themes with grace and power.",
   },
   {
     year: 2020,
-    title: "Winner 2020",
+    title: "Hasenjagd",
     url: "https://youtu.be/wopWYOaq-hM",
     blog:
       "A breathtaking mix of realism and artistry, showing the resilience of youth in uncertain times.",
   },
+ {
+    year: 2023,
+    title: "The pen",
+    url: "https://youtu.be/y4jUy9yGP48",
+    blog:
+      "'I was in tears as I watched this excellent short film. Education is in crisis in almost all parts of the world and desperately many children are falling victim to pointless requirements.',
+  },
+
 ];
 
 const jury = [
