@@ -101,7 +101,7 @@ const pastWinners = [
     title: "Static",
     url: "https://youtu.be/xYnVUz-Wy0c",
     blog:
-      "'A visually striking short film where cinematic craft takes center stage, turning business into pure atmosphere.'",
+      "A visually striking short film where cinematic craft takes center stage, turning business into pure atmosphere.",
   },
 
 
