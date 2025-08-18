@@ -96,6 +96,14 @@ const pastWinners = [
     blog:
       "'I was in tears as I watched this excellent short film. Education is in crisis in almost all parts of the world and desperately many children are falling victim to pointless requirements.',
   },
+ {
+    year: 2024,
+    title: "Static",
+    url: "https://youtu.be/xYnVUz-Wy0c",
+    blog:
+      "'A visually striking short film where cinematic craft takes center stage, turning business into pure atmosphere.'",
+  },
+
 
 
 ];
@@ -697,9 +705,7 @@ const ParticipatePage = () => (
         <Film className="h-10 w-10 text-yellow-400" /> Submit Your Film
       </h2>
       <p className="text-gray-300 mb-8 text-lg">
-        Submissions are open to filmmakers aged 14–26. We accept narrative, documentary, animation, experimental, and
-        hybrid works up to 30 minutes. No premiere status required. All languages welcome (English or German subtitles
-        preferred).
+        Submissions are closed. The jury voting has begun. 
       </p>
       <form
         onSubmit={(e) => {
