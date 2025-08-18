@@ -94,7 +94,7 @@ const pastWinners = [
     title: "The pen",
     url: "https://youtu.be/y4jUy9yGP48",
     blog:
-      "'I was in tears as I watched this excellent short film. Education is in crisis in almost all parts of the world and desperately many children are falling victim to pointless requirements.',
+      "I was in tears as I watched this excellent short film. Education is in crisis in almost all parts of the world and desperately many children are falling victim to pointless requirements.",
   },
  {
     year: 2024,
