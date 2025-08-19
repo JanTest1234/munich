@@ -553,27 +553,54 @@ const HomePage = () => {
 
 const FinalistsPage = ({ onReadMore }) => (
   <div>
-    <section className="py-24 max-w-7xl mx-auto px-4">
+    <section className="py-24 max-w-5xl mx-auto px-4">
+      {/* Überschrift */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-5xl font-extrabold mb-6 flex items-center gap-3"
+        className="text-5xl font-extrabold mb-8 flex items-center gap-3"
       >
-        <Camera className="h-10 w-10 text-yellow-400" /> Best Film Finalists 2025
+        <Camera className="h-12 w-12 text-yellow-400" /> Best Film Winner 2025
       </motion.h2>
-      <p className="text-gray-400 mb-10 max-w-4xl text-lg">
-        These films represent the pinnacle of young cinematic talent in 2025 — each bringing a unique vision, style, and
-        emotional depth that captured our jury's attention. From intimate dramas to bold experimental pieces, these
-        finalists redefine what youth cinema can be. Dive into their trailers and read our extended jury notes.
+
+      {/* Einleitung */}
+      <p className="text-gray-400 mb-12 text-lg leading-relaxed">
+        This year’s winning film captured the hearts and minds of our jury with its
+        bold storytelling, cinematic vision, and emotional resonance. Below, you can
+        watch the winning film’s trailer and read detailed commentary from each jury
+        member.
       </p>
-      <motion.div variants={stagger} initial="hidden" animate="visible" className="grid md:grid-cols-3 gap-10">
-        {finalists.map((f) => (
-          <VideoCard key={f.title} item={f} onReadMore={onReadMore} />
-        ))}
+
+      {/* Großes Video */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="mb-16 rounded-2xl overflow-hidden shadow-2xl"
+      >
+        <VideoCard key={winner.title} item={winner} onReadMore={onReadMore} large />
       </motion.div>
+
+      {/* Jury-Bewertungen */}
+      <div className="space-y-16">
+        {juryMembers.map((member) => (
+          <motion.div
+            key={member.name}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-3xl font-bold mb-4 text-yellow-300">
+              {member.name} – {member.role}
+            </h3>
+            <p className="text-gray-300 text-lg leading-relaxed">
+              {member.comment}
+            </p>
+          </motion.div>
+        ))}
+      </div>
     </section>
-  </div>
-);
+  </div>);
 
 const WinnersPage = ({ onReadMore }) => (
   <div>
@@ -796,7 +823,7 @@ function StickyCountdownBar() {
           <span className="font-bold text-yellow-300 tabular-nums">{days}d {hours}h {minutes}m {seconds}s</span>
         </div>
         <Link to="/finalists" className="hidden sm:inline-flex items-center gap-2 bg-yellow-500 text-black font-extrabold px-4 py-2 rounded-xl hover:bg-yellow-400">
-          <ArrowRight className="h-4 w-4" /> Finalists
+          <ArrowRight className="h-4 w-4" /> Winner
         </Link>
       </div>
     </div>
@@ -887,7 +914,7 @@ export default function MunichOnlineFilmFestival() {
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/finalists" element={<FinalistsPage onReadMore={setSelectedBlog} />} />
+              <Route path="/winner" element={<FinalistsPage onReadMore={setSelectedBlog} />} />
               <Route path="/winners" element={<WinnersPage onReadMore={setSelectedBlog} />} />
               <Route path="/jury" element={<JuryPage />} />
               <Route path="/criteria" element={<CriteriaPage />} />
