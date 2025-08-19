@@ -559,56 +559,72 @@ className="text-5xl font-extrabold mb-6 flex items-center gap-3"
 <p className="text-gray-400 mb-10 max-w-4xl text-lg">
 These films represent the pinnacle of young cinematic talent in 2025 — each bringing a unique vision, style, and
 emotional depth that captured our jury's attention. From intimate dramas to bold experimental pieces, these
-finalists redefine what youth cinema can be. Dive into their trailers and read our extended jury notes.
+finalists redefine what youth cinema can be.
 </p>
 
 
-{/* 2. und 3. Platz */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
-{finalists.slice(1, 3).map((f) => (
+{/* Platz 3 und Platz 2 */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-32">
+{[finalists[0], finalists[1]].map((f, idx) => (
 <div
 key={f.title}
 className="relative flex flex-col items-center"
 >
 <div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition duration-300 hover:-translate-y-2">
-<VideoCard item={f} onReadMore={onReadMore} />
+<VideoCard item={f} />
 <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-300 to-yellow-500" />
 </div>
-<p className="mt-4 text-center text-gray-300 text-base max-w-sm">
-{f.description || "This finalist achieved recognition as runner-up in 2025."}
+<h3 className="mt-4 text-xl font-semibold text-gray-200">
+{idx === 0 ? "🥉 3rd Place" : "🥈 2nd Place"}
+</h3>
+<p className="mt-2 text-center text-gray-400 text-base max-w-sm">
+{f.description || "One of the distinguished finalists of 2025."}
 </p>
 </div>
 ))}
 </div>
 
 
-{/* 1. Platz groß */}
-<div className="mb-16">
-{finalists[0] && (
-<div className="relative flex flex-col items-center">
-<div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition duration-300 hover:-translate-y-2">
-<VideoCard item={finalists[0]} onReadMore={onReadMore} />
-<div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-400 to-yellow-600" />
-</div>
-<h3 className="mt-6 text-3xl font-bold text-yellow-400">🏆 Winner 2025</h3>
-</div>
-)}
-</div>
-
-
-{/* Blog-artiger langer Text über den Gewinner */}
-{finalists[0] && (
-<div className="prose prose-lg prose-invert max-w-3xl mx-auto text-gray-300">
-<h4 className="text-2xl font-semibold mb-4">Why this film won</h4>
+{/* Blog-artiger Text zum Sieger (aber Film noch nicht gezeigt) */}
+{finalists[2] && (
+<motion.div
+initial={{ opacity: 0, y: 100 }}
+whileInView={{ opacity: 1, y: 0 }}
+transition={{ duration: 1.5 }}
+viewport={{ once: true }}
+className="prose prose-lg prose-invert max-w-3xl mx-auto text-gray-300 mb-24"
+>
+<h4 className="text-3xl font-semibold mb-6">And the winner is...</h4>
 <p>
-{finalists[0].longDescription ||
-"The jury was deeply moved by the storytelling, visual language, and emotional impact of this film. Its ability to capture universal themes while maintaining a deeply personal voice set it apart from all other entries. This work not only demonstrates technical mastery but also a profound sensitivity to the human experience."}
+{finalists[2].longDescription ||
+"The jury was unanimous in selecting this masterpiece as the winner. Its storytelling, cinematic language, and emotional resonance transcended the competition. The film embodies the spirit of youth cinema with bold creativity and a powerful message."}
 </p>
+</motion.div>
+)}
+
+
+{/* Platz 1 groß – Reveal nach Scroll */}
+{finalists[2] && (
+<section className="relative w-full h-[90vh] flex items-center justify-center mb-24">
+<motion.div
+initial={{ opacity: 0, scale: 0.9 }}
+whileInView={{ opacity: 1, scale: 1 }}
+transition={{ duration: 1.2 }}
+viewport={{ once: true }}
+className="w-full max-w-5xl bg-white rounded-3xl shadow-3xl overflow-hidden"
+>
+<VideoCard item={finalists[2]} />
+<div className="absolute bottom-0 left-0 w-full h-4 bg-gradient-to-r from-yellow-400 to-yellow-600" />
+</motion.div>
+
+
+<div className="absolute top-6 left-1/2 -translate-x-1/2 bg-yellow-400 text-black font-bold text-2xl px-6 py-2 rounded-full shadow-xl">
+🏆 1st Place Winner
 </div>
+</section>
 )}
 </section>
 </div>);
-
 const WinnersPage = ({ onReadMore }) => (
   <div>
     <section className="py-24 max-w-7xl mx-auto px-4">
