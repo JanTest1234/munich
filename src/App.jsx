@@ -595,15 +595,7 @@ className="prose prose-lg prose-invert max-w-3xl mx-auto mb-24 text-gray-300 spa
 <p>
 What struck us most was not the narrative itself, but the way it was brought to life. Every frame carries precision, rhythm, and a sense of urgency that transcends the simplicity of the story. You can feel the heart, the craft, and the determination behind each decision — from the framing of a shot to the weight of every sound.
 </p>
-<p>
-<strong>Tom Tykwer:</strong> “It’s rare to encounter a film where the technical choices feel so alive, so inseparable from the emotion of the piece. The energy here doesn’t come from twists in the script but from how the filmmakers orchestrated image and sound into a tense and pulsating experience. That, to me, is cinema in its purest sense.”
-</p>
-<p>
-<strong>Daniel Brühl:</strong> “What impressed me most is how these young filmmakers embrace style with such boldness. Watching this work, I had the feeling that I might be witnessing the early steps of future Tarantinos — artists who understand that cinema is not just storytelling but also attitude, rhythm, and presence. It’s raw, it’s daring, and it makes you want to see what they’ll do next.”
-</p>
-<p>
-<strong>Fatih Akin:</strong> “The sound design captivated me immediately — immersive, detailed, and powerful. Together with the striking cinematography and meticulous composition, it elevates even the most minimal storyline into something gripping. It’s a film that proves: when you put your soul into craft, when you listen as closely as you look, you can transform simplicity into intensity.”
-</p>
+
 <p>
 In the end, this work stood out not because of what was told, but because of how it was told. The filmmakers turned restraint into strength, and in doing so, revealed an artistic voice that demands attention.
 </p>
@@ -644,17 +636,7 @@ className="prose prose-lg prose-invert max-w-3xl mt-12 text-gray-300"
 to Jan, Ben, and Aleister: This is exactly the kind of creative energy you need to carry forward. Keep pushing, keep experimenting, and don’t hold back — your vision matters, and it will resonate with audiences in ways you can’t even imagine yet. Make this journey count, because what you’re building here is truly exceptional.”
 </p>
 <p>
-Tom Tykwer:
-“What immediately grabbed me was how the film transforms what could have been a minimal, straightforward story into something intensely cinematic. Every choice — from camera angles to lighting, from the rhythm of cuts to the interplay of silence and sound — feels deliberate, charged with emotion, and incredibly precise. It’s not the story itself that lingers in your mind, but the experience of how it unfolds. You can feel the filmmakers’ heart and commitment in every frame. This is the kind of work that reminds me why I fell in love with filmmaking: the pure, almost tactile joy of crafting images and sound to evoke feeling. Watching it, I felt tension, empathy, and admiration all at once. It’s a short film, but it operates with the confidence and detail of a feature-length masterwork.”
 
-Daniel Brühl:
-“What fascinated me most was the energy and audacity of the young filmmakers. They have a grasp of cinematic language that’s far beyond their years — a sense of style, timing, and presence that made me think: these are the future Tarantinos. Their work isn’t just about telling a story; it’s about how that story is experienced, how tension is built, and how each character’s moment resonates. The film breathes because it trusts the audience to feel, listen, and look closely. The way the youth perspective translates into visual daring and auditory intensity is remarkable. I was constantly aware that what I was watching was a film made with care, intelligence, and genuine passion — and that makes all the difference.”
-
-Fatih Akin:
-“I was immediately captivated by the sound design — immersive, layered, and alive. It doesn’t just accompany the images; it tells its own story, enhancing every glance, every pause, every subtle interaction between characters. Combined with the meticulous cinematography, careful composition, and dynamic camera work, the result is a film that feels alive, urgent, and gripping, despite its minimal plot. What truly distinguishes this work is the evident care and soul invested in it: you can feel the filmmakers thinking, feeling, and breathing life into every detail. It’s an example of how dedication to craft and sensitivity to form can elevate a story into an unforgettable experience.”
-
-Collective Observation:
-“This film stands out not for what it narrates, but for how it is realized. It demonstrates that storytelling isn’t only about plot twists or grandiose ideas; it’s about rhythm, atmosphere, and the emotional truth embedded in every frame. The filmmakers’ vision, combined with technical mastery, creates a work that lingers long after viewing. It’s a reminder that great cinema can arise from simplicity when it is approached with love, intelligence, and courage. Watching it, we were not just spectators; we were participants in a crafted sensory experience, carried along by a vision that clearly comes from the heart.”.
 </p>
 </motion.div>
 </section>
@@ -896,10 +878,8 @@ function Nav() {
     { to: "/", label: "Home" },
     { to: "/finalists", label: "Finalists" },
     { to: "/winners", label: "Winners" },
-    { to: "/jury", label: "Jury" },
     { to: "/criteria", label: "Criteria" },
     { to: "/about", label: "About" },
-    { to: "/history", label: "History" },
     { to: "/participate", label: "Participate" },
   ];
   const location = useLocation();
