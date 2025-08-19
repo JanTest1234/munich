@@ -574,7 +574,6 @@ const FinalistsPage = ({ onReadMore }) => (
     </section>
   </div>
 );
-
 const WinnersPage = ({ onReadMore }) => (
   <div>
     <section className="py-24 max-w-7xl mx-auto px-4">
