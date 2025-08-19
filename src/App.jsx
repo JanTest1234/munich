@@ -228,7 +228,7 @@ const sponsors = [
  ********************/
 // Choose a big target date. Adjust as needed.
 const FESTIVAL_NAME = "Munich Online Film Festival";
-const FESTIVAL_START = new Date("2025-08-22T18:00:00+02:00"); // CET/CEST Munich time
+const FESTIVAL_START = new Date("2025-08-19T18:00:00+02:00"); // CET/CEST Munich time
 
 function useTimeLeft(targetDate) {
   const [now, setNow] = useState(() => new Date());
@@ -450,7 +450,7 @@ const HomePage = () => {
               <Badge className="tracking-widest uppercase bg-yellow-500 text-black text-base px-4 py-2">Since 2010</Badge>
               <div className="flex items-center gap-3 text-yellow-300 text-sm md:text-base">
                 <Calendar className="h-5 w-5" />
-                <span>22 august 2025 · Online • Munich</span>
+                <span>19 august 2025 · Online • Munich</span>
               </div>
             </div>
             <h1 className="text-6xl md:text-8xl xl:text-9xl font-extrabold mb-6 leading-[0.95] drop-shadow-[0_10px_60px_rgba(234,179,8,0.2)]">
