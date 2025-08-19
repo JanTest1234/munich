@@ -796,7 +796,7 @@ function StickyCountdownBar() {
           <span className="font-bold text-yellow-300 tabular-nums">{days}d {hours}h {minutes}m {seconds}s</span>
         </div>
         <Link to="/finalists" className="hidden sm:inline-flex items-center gap-2 bg-yellow-500 text-black font-extrabold px-4 py-2 rounded-xl hover:bg-yellow-400">
-          <ArrowRight className="h-4 w-4" /> Winner
+          <ArrowRight className="h-4 w-4" /> Finalists
         </Link>
       </div>
     </div>
