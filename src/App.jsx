@@ -33,7 +33,7 @@ import { Badge } from "@/components/ui/badge";
  ********************/
 const finalists = [
   {
-    title: "Finalist 1",
+    title: "Mondblume",
     description:
       "A gripping short film exploring depression, anxiety, and the quiet strength that carries us through.",
     url: "https://youtu.be/xBCC5RpWKHA",
@@ -41,7 +41,7 @@ const finalists = [
       "This powerful short film takes viewers on an emotional journey through depression, anxiety, and the search for inner strength. The jury praised its “sensitive yet striking visual storytelling” and the way it “captures both the fragility and resilience of the human spirit.” With intense character portrayals and a carefully crafted atmosphere, the film conveys the inner struggle, moments of despair, and subtle sparks of hope that guide one forward. “Kornblume” is a courageous, moving, and inspiring work that leaves a lasting impression.",
   },
   {
-    title: "Finalist 2",
+    title: "Schweiss, tränen, blut",
     description:
       "A relatable short film exploring the stress, pressures, and resilience of school life.",
     url: "https://youtu.be/na9N-YT1l90",
@@ -49,7 +49,7 @@ const finalists = [
       "This insightful short film delves into the pressures and challenges of school life, capturing the stress, expectations, and emotional ups and downs that students face daily. The jury praised its “relatable storytelling and authentic portrayal of youth experiences,” noting how it “balances humor, tension, and empathy with remarkable sensitivity.” Through its vivid characters and engaging narrative, the film highlights both the struggles and the resilience of young people navigating academic and social pressures.",
   },
   {
-    title: "Finalist 3",
+    title: "the lost brother",
     description:
       "A visually and sonically stunning short film where exceptional cinematography and immersive sound design turn a minimal crime story into a gripping cinematic experience.",
     url: "https://youtu.be/J36aYNW6RaI",
@@ -566,10 +566,7 @@ finalists redefine what youth cinema can be.
 {/* Platz 3 und Platz 2 */}
 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-32">
 {[finalists[0], finalists[1]].map((f, idx) => (
-<div
-key={f.title}
-className="relative flex flex-col items-center"
->
+<div key={f.title} className="relative flex flex-col items-center">
 <div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition duration-300 hover:-translate-y-2">
 <VideoCard item={f} />
 <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-300 to-yellow-500" />
@@ -585,25 +582,36 @@ className="relative flex flex-col items-center"
 </div>
 
 
-{/* Blog-artiger Text zum Sieger (aber Film noch nicht gezeigt) */}
+{/* Jury Statements – scroll reveal */}
 {finalists[2] && (
 <motion.div
-initial={{ opacity: 0, y: 100 }}
+initial={{ opacity: 0, y: 50 }}
 whileInView={{ opacity: 1, y: 0 }}
-transition={{ duration: 1.5 }}
+transition={{ duration: 1 }}
 viewport={{ once: true }}
-className="prose prose-lg prose-invert max-w-3xl mx-auto text-gray-300 mb-24"
+className="prose prose-lg prose-invert max-w-3xl mx-auto mb-24 text-gray-300 space-y-6"
 >
-<h4 className="text-3xl font-semibold mb-6">And the winner is...</h4>
+<h4 className="text-3xl font-semibold">Jury Statement</h4>
 <p>
-{finalists[2].longDescription ||
-"The jury was unanimous in selecting this masterpiece as the winner. Its storytelling, cinematic language, and emotional resonance transcended the competition. The film embodies the spirit of youth cinema with bold creativity and a powerful message."}
+What struck us most was not the narrative itself, but the way it was brought to life. Every frame carries precision, rhythm, and a sense of urgency that transcends the simplicity of the story. You can feel the heart, the craft, and the determination behind each decision — from the framing of a shot to the weight of every sound.
+</p>
+<p>
+<strong>Tom Tykwer:</strong> “It’s rare to encounter a film where the technical choices feel so alive, so inseparable from the emotion of the piece. The energy here doesn’t come from twists in the script but from how the filmmakers orchestrated image and sound into a tense and pulsating experience. That, to me, is cinema in its purest sense.”
+</p>
+<p>
+<strong>Daniel Brühl:</strong> “What impressed me most is how these young filmmakers embrace style with such boldness. Watching this work, I had the feeling that I might be witnessing the early steps of future Tarantinos — artists who understand that cinema is not just storytelling but also attitude, rhythm, and presence. It’s raw, it’s daring, and it makes you want to see what they’ll do next.”
+</p>
+<p>
+<strong>Fatih Akin:</strong> “The sound design captivated me immediately — immersive, detailed, and powerful. Together with the striking cinematography and meticulous composition, it elevates even the most minimal storyline into something gripping. It’s a film that proves: when you put your soul into craft, when you listen as closely as you look, you can transform simplicity into intensity.”
+</p>
+<p>
+In the end, this work stood out not because of what was told, but because of how it was told. The filmmakers turned restraint into strength, and in doing so, revealed an artistic voice that demands attention.
 </p>
 </motion.div>
 )}
 
 
-{/* Platz 1 groß – Reveal nach Scroll */}
+{/* Platz 1 groß – Reveal nach Text */}
 {finalists[2] && (
 <section className="relative w-full h-[90vh] flex items-center justify-center mb-24">
 <motion.div
@@ -624,8 +632,7 @@ className="w-full max-w-5xl bg-white rounded-3xl shadow-3xl overflow-hidden"
 </section>
 )}
 </section>
-</div>);
-const WinnersPage = ({ onReadMore }) => (
+</div>);const WinnersPage = ({ onReadMore }) => (
   <div>
     <section className="py-24 max-w-7xl mx-auto px-4">
       <h2 className="text-5xl font-extrabold mb-6 flex items-center gap-3">
