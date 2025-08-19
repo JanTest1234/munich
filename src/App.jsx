@@ -139,7 +139,7 @@ const criteria = [
       "We look for fresh, daring ideas that push boundaries and challenge convention — a voice that feels unmistakably yours.",
     example:
       "Example: A micro-budget thriller using a single, unbroken take to explore the anxieties of digital life.",
-  
+
   },
   {
     icon: Eye,
@@ -232,224 +232,11 @@ const FESTIVAL_START = new Date("2025-08-19T18:00:00+02:00"); // CET/CEST Munich
 
 function useTimeLeft(targetDate) {
   const [now, setNow] = useState(() => new Date());
-  useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000);
-    return () => clearInterval(id);
-  }, []);
-  const diff = Math.max(0, targetDate.getTime() - now.getTime());
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  const done = diff === 0;
-  return { days, hours, minutes, seconds, done };
-}
 
-const TimeBlock = ({ label, value }) => (
-  <div className="text-center">
-    <motion.div
-      key={String(value)}
-      initial={{ y: 10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="min-w-[5.5rem] px-4 py-3 rounded-2xl bg-black/70 border border-yellow-500/30 shadow-[0_0_60px_rgba(234,179,8,0.15)]"
-    >
-      <div className="font-black tabular-nums text-4xl md:text-6xl leading-none">{String(value).padStart(2, "0")}</div>
-      <div className="uppercase text-[0.65rem] md:text-xs tracking-widest text-yellow-300/80 mt-2">{label}</div>
-    </motion.div>
-  </div>
-);
-
-function Countdown({ target = FESTIVAL_START }) {
-  const { days, hours, minutes, seconds, done } = useTimeLeft(target);
-  return (
-    <div className="w-full">
-      {done ? (
-        <div className="flex items-center justify-center gap-3 text-2xl md:text-4xl">
-          <Flame className="h-7 w-7 md:h-10 md:w-10 text-yellow-400" />
-          <span className="font-extrabold">We are LIVE now!</span>
-        </div>
-      ) : (
-        <div className="flex items-center justify-center gap-4 md:gap-6">
-          <TimeBlock label="Days" value={days} />
-          <TimeBlock label="Hours" value={hours} />
-          <TimeBlock label="Minutes" value={minutes} />
-          <TimeBlock label="Seconds" value={seconds} />
-        </div>
-      )}
-      <div className="text-center text-xs md:text-sm text-gray-300 mt-3">
-        Festival start: {FESTIVAL_START.toLocaleString()}
-      </div>
-    </div>
-  );
-}
-
-/********************
- * ANIMATION HELPERS
- ********************/
-const fadeInUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.2 } },
-};
-
-const sweep = {
-  initial: { x: "-120%", opacity: 0 },
-  animate: {
-    x: "120%",
-    opacity: 1,
-    transition: { duration: 1.6, ease: "easeInOut", repeat: Infinity, repeatDelay: 6 },
-  },
-};
-
-/********************
- * SMALL COMPONENTS
- ********************/
-const WordCycler = ({ words }) => {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setIndex((i) => (i + 1) % words.length), 2200);
-    return () => clearInterval(id);
-  }, [words.length]);
-  return (
-    <div className="h-12 relative overflow-hidden inline-flex align-middle ml-3">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={index}
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -20, opacity: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-yellow-400 font-extrabold text-3xl md:text-5xl drop-shadow-[0_0_30px_rgba(234,179,8,0.35)]"
-        >
-          {words[index]}
-        </motion.span>
-      </AnimatePresence>
-    </div>
-  );
-};
-
-const VideoCard = ({ item, isWinner, onReadMore }) => (
-  <motion.div
-    variants={fadeInUp}
-    className="bg-gray-900 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(234,179,8,0.15)] hover:shadow-[0_0_80px_rgba(234,179,8,0.35)] transition-shadow"
-  >
-    <a href={item.url} target="_blank" rel="noopener noreferrer" className="group relative block">
-      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors z-10 flex items-center justify-center">
-        <PlayCircle className="h-14 w-14 text-white" />
-      </div>
-      <img
-        src={`https://img.youtube.com/vi/${item.url.split("v=")[1] || item.url.split("be/")[1]}/0.jpg`}
-        alt={item.title}
-        className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
-      />
-    </a>
-    <div className="p-8">
-      <h3 className="text-2xl font-extrabold mb-3 tracking-wide">
-        {isWinner ? `${item.year}: ${item.title}` : item.title}
-      </h3>
-      <p className="text-gray-400 text-base mb-6">{item.description}</p>
-      <button
-        onClick={() => onReadMore && onReadMore(item.blog)}
-        className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 text-base font-bold"
-      >
-        <FileText className="h-5 w-5" /> Read more
-      </button>
-    </div>
-  </motion.div>
-);
-
-const SponsorsMarquee = () => (
-  <div className="overflow-hidden py-8 border-t border-gray-800">
-    <motion.div
-      className="flex gap-10 whitespace-nowrap"
-      animate={{ x: [0, -600] }}
-      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-    >
-      {[...sponsors, ...sponsors].map((s, i) => (
-        <div
-          key={i}
-          className="flex items-center gap-3 px-6 py-3 rounded-full bg-gray-900/80 border border-gray-800"
-        >
-          <span className="text-3xl">{s.logo}</span>
-          <span className="text-gray-300 font-semibold">{s.name}</span>
-        </div>
-      ))}
-    </motion.div>
-  </div>
-);
-
-const ParticleBackground = () => {
-  const particles = useMemo(() => Array.from({ length: 40 }, (_, i) => i), []);
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {particles.map((i) => (
-        <motion.span
-          key={i}
-          className="absolute block rounded-full bg-yellow-500/10"
-          style={{ width: 6 + (i % 5) * 2, height: 6 + (i % 5) * 2, left: `${(i * 37) % 100}%`, top: `${(i * 53) % 100}%` }}
-          animate={{ y: [0, -14, 0], opacity: [0.2, 0.85, 0.2] }}
-          transition={{ duration: 3 + (i % 5), repeat: Infinity, ease: "easeInOut", delay: i * 0.05 }}
-        />
-      ))}
-    </div>
-  );
-};
-
-const LightSweep = () => (
-  <motion.div
-    variants={sweep}
-    initial="initial"
-    animate="animate"
-    className="pointer-events-none absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
-  />
-);
-
-const PageWrapper = ({ children }) => {
-  const location = useLocation();
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div key={location.pathname} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
-};
-
-/********************
- * PAGES
- ********************/
-const HomePage = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const yBack = useTransform(scrollYProgress, [0, 1], [0, -240]);
-  const yMid = useTransform(scrollYProgress, [0, 1], [0, -140]);
-  const yFront = useTransform(scrollYProgress, [0, 1], [0, -80]);
-
-  return (
-    <div ref={ref} className="relative">
-      {/* HERO with Parallax */}
-      <section className="relative h-[100vh] overflow-hidden">
-        <motion.img
-          style={{ y: yBack }}
-          src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=2400&q=80"
-          className="absolute inset-0 w-full h-full object-cover"
-          alt="Festival background"
-        />
-        <motion.div style={{ y: yMid }} className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/95" />
-        <ParticleBackground />
-
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <div className="relative max-w-7xl mx-auto">
-            <LightSweep />
-            <div className="mb-6 flex flex-col items-center gap-3">
               <Badge className="tracking-widest uppercase bg-yellow-500 text-black text-base px-4 py-2">Since 2010</Badge>
               <div className="flex items-center gap-3 text-yellow-300 text-sm md:text-base">
                 <Calendar className="h-5 w-5" />
+               
                 <span>19 august 2025 · Online • Munich</span>
               </div>
             </div>
@@ -574,6 +361,7 @@ const FinalistsPage = ({ onReadMore }) => (
     </section>
   </div>
 );
+
 const WinnersPage = ({ onReadMore }) => (
   <div>
     <section className="py-24 max-w-7xl mx-auto px-4">
@@ -886,7 +674,7 @@ export default function MunichOnlineFilmFestival() {
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/winner" element={<FinalistsPage onReadMore={setSelectedBlog} />} />
+              <Route path="/finalists" element={<FinalistsPage onReadMore={setSelectedBlog} />} />
               <Route path="/winners" element={<WinnersPage onReadMore={setSelectedBlog} />} />
               <Route path="/jury" element={<JuryPage />} />
               <Route path="/criteria" element={<CriteriaPage />} />
