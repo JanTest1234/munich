@@ -56,14 +56,7 @@ const finalists = [
     blog:
       "While the narrative centers on three criminals and the tense interrogation of one by another, the jury, particularly Fatih Akin, was captivated by the film’s sound design and immersive auditory landscape. Combined with its striking cinematography, meticulous scene composition, and dynamic camera work, the film creates an intense and gripping atmosphere that elevates even a minimal plot. This short film demonstrates how masterful visuals and sound can transform a simple story into a compelling cinematic experience.",
   },
- {
-    title: "Finalist 4",
-    description:
-      "A poetic, dialogue-free short film that uses only music and imagery to portray the emotions of adolescence.",
-    url: "https://youtu.be/e26knO5D-mk",
-    blog:
-      "Told without dialogue, this short film relies entirely on music and imagery to capture the emotions, struggles, and dreams of adolescence. The jury highlighted its “remarkable ability to communicate complex feelings with pure visual and musical language,” praising its poetic flow and authenticity. Through carefully composed scenes and an evocative soundtrack, the film immerses viewers in the raw and unfiltered perspective of a teenager navigating the journey of growing up.",
-  },
+
 
 ];
 
@@ -552,27 +545,52 @@ const HomePage = () => {
 };
 
 const FinalistsPage = ({ onReadMore }) => (
-  <div>
-    <section className="py-24 max-w-7xl mx-auto px-4">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-5xl font-extrabold mb-6 flex items-center gap-3"
-      >
-        <Camera className="h-10 w-10 text-yellow-400" /> Best Film Finalists 2025
-      </motion.h2>
-      <p className="text-gray-400 mb-10 max-w-4xl text-lg">
-        These films represent the pinnacle of young cinematic talent in 2025 — each bringing a unique vision, style, and
-        emotional depth that captured our jury's attention. From intimate dramas to bold experimental pieces, these
-        finalists redefine what youth cinema can be. Dive into their trailers and read our extended jury notes.
-      </p>
-      <motion.div variants={stagger} initial="hidden" animate="visible" className="grid md:grid-cols-3 gap-10">
-        {finalists.map((f) => (
-          <VideoCard key={f.title} item={f} onReadMore={onReadMore} />
-        ))}
-      </motion.div>
-    </section>
-  </div>
+<div>
+<section className="py-24 max-w-7xl mx-auto px-4">
+<motion.h2
+initial={{ opacity: 0, y: 20 }}
+animate={{ opacity: 1, y: 0 }}
+className="text-5xl font-extrabold mb-6 flex items-center gap-3"
+>
+<Camera className="h-10 w-10 text-yellow-400" /> Best Film Finalists 2025
+</motion.h2>
+
+
+<p className="text-gray-400 mb-10 max-w-4xl text-lg">
+These films represent the pinnacle of young cinematic talent in 2025 — each bringing a unique vision, style, and
+emotional depth that captured our jury's attention. From intimate dramas to bold experimental pieces, these
+finalists redefine what youth cinema can be. Dive into their trailers and read our extended jury notes.
+</p>
+
+
+<motion.div
+variants={stagger}
+initial="hidden"
+animate="visible"
+className="grid md:grid-cols-3 gap-14"
+>
+{finalists.map((f) => (
+<div
+key={f.title}
+className="relative group flex flex-col items-center"
+>
+{/* Podest-Effekt */}
+<div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition duration-300 group-hover:-translate-y-2">
+<VideoCard item={f} onReadMore={onReadMore} />
+{/* Podest-Basis */}
+<div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-300 to-yellow-500" />
+</div>
+
+
+{/* Beschreibung unter dem Video */}
+<p className="mt-6 text-center text-gray-300 text-base max-w-xs">
+{f.description || "A unique finalist contribution to the 2025 selection."}
+</p>
+</div>
+))}
+</motion.div>
+</section>
+</div>
 );
 
 const WinnersPage = ({ onReadMore }) => (
