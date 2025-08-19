@@ -563,35 +563,51 @@ finalists redefine what youth cinema can be. Dive into their trailers and read o
 </p>
 
 
-<motion.div
-variants={stagger}
-initial="hidden"
-animate="visible"
-className="grid md:grid-cols-3 gap-14"
->
-{finalists.map((f) => (
+{/* 2. und 3. Platz */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+{finalists.slice(1, 3).map((f) => (
 <div
 key={f.title}
-className="relative group flex flex-col items-center"
+className="relative flex flex-col items-center"
 >
-{/* Podest-Effekt */}
-<div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition duration-300 group-hover:-translate-y-2">
+<div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition duration-300 hover:-translate-y-2">
 <VideoCard item={f} onReadMore={onReadMore} />
-{/* Podest-Basis */}
-<div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-300 to-yellow-500" />
+<div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-300 to-yellow-500" />
 </div>
-
-
-{/* Beschreibung unter dem Video */}
-<p className="mt-6 text-center text-gray-300 text-base max-w-xs">
-{f.description || "A unique finalist contribution to the 2025 selection."}
+<p className="mt-4 text-center text-gray-300 text-base max-w-sm">
+{f.description || "This finalist achieved recognition as runner-up in 2025."}
 </p>
 </div>
 ))}
-</motion.div>
-</section>
 </div>
-);
+
+
+{/* 1. Platz groß */}
+<div className="mb-16">
+{finalists[0] && (
+<div className="relative flex flex-col items-center">
+<div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden transform transition duration-300 hover:-translate-y-2">
+<VideoCard item={finalists[0]} onReadMore={onReadMore} />
+<div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-yellow-400 to-yellow-600" />
+</div>
+<h3 className="mt-6 text-3xl font-bold text-yellow-400">🏆 Winner 2025</h3>
+</div>
+)}
+</div>
+
+
+{/* Blog-artiger langer Text über den Gewinner */}
+{finalists[0] && (
+<div className="prose prose-lg prose-invert max-w-3xl mx-auto text-gray-300">
+<h4 className="text-2xl font-semibold mb-4">Why this film won</h4>
+<p>
+{finalists[0].longDescription ||
+"The jury was deeply moved by the storytelling, visual language, and emotional impact of this film. Its ability to capture universal themes while maintaining a deeply personal voice set it apart from all other entries. This work not only demonstrates technical mastery but also a profound sensitivity to the human experience."}
+</p>
+</div>
+)}
+</section>
+</div>);
 
 const WinnersPage = ({ onReadMore }) => (
   <div>
